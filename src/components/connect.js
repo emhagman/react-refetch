@@ -207,7 +207,7 @@ function connect(mapPropsToRequestsToProps, defaults, options) {
       }
 
       shouldComponentUpdate(nextProps, nextState) {
-        return !options.pure ||
+        return !options.server && !options.pure ||
           this.state.data != nextState.data || !shallowEqual(this.props, nextProps)
       }
 
